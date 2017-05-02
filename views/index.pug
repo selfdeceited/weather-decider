@@ -1,0 +1,13 @@
+extends layout
+
+block content
+  h1= title
+  p #{meaning}
+  div#app Your city is: {{city}}
+    form#form
+    span change city:
+    input(type='text')(v-model='city')
+    button(v-on:click="getResponse")#go Go!
+    pre {{forecast}}
+  script(type='text/javascript')(src='/bundle.js')
+ 
