@@ -24,11 +24,15 @@ const app = new Vue({
         ?q=super-query
         &format=json
         &diagnostics=true
-        &env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys
+        &env=store://datatables.org/alltableswithkeys
         &callback=`.replace(/\s\s+/g, '').replace('super-query', yql)
         
       this.$http.get(encodeURI(query)).then(function(res) { 
-        this.forecast = res.body.query.results
+        const response = res.body.query;
+        if(!response.results)
+          this.forecast = response.diagnostics
+        else
+          this.forecast = res.body.query.results
       });
     }
   }
