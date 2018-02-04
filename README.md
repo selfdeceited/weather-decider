@@ -1,4 +1,6 @@
 # weather-decider
+
+[![Greenkeeper badge](https://badges.greenkeeper.io/selfdeceited/weather-decider.svg)](https://greenkeeper.io/)
 Implementing the following idea:
  - Yahoo weather API
  - Website with Web Push API
